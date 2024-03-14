@@ -5,5 +5,14 @@ public class SortContext {
         this.strategy = strat;
     }
 
-    public void setStrategy()
+    public void setStrategy(Strategy strat){
+        this.strategy = strat;
+    }
+
+    public void execSort(int[] array){
+        double sTime = System.nanoTime();
+        strategy.sort(array);
+        double eTime = System.nanoTime();
+        System.out.println("Czas dzialania algorytmu: " + (eTime-sTime));
+    }
 }
